@@ -8,6 +8,11 @@ namespace Phonebook
 	{
         private List<Contact> _contacts {get;set;}
 
+        private void DisplayContactDetails (Contact contact)
+        {
+            Console.WriteLine($"Contact: {contact.Name}, {contact.Number}");
+        }
+
         public void AddContact (Contact contact)
         {
             _contacts.Add(contact);
@@ -22,7 +27,7 @@ namespace Phonebook
             }
             else
             {
-                Console.WriteLine($"Contact: {contact.Name}, {contact.Number}");
+                DisplayContactDetails(contact);
             }
         }
 
@@ -30,7 +35,7 @@ namespace Phonebook
         {
             foreach (var contact in _contacts)
             {
-                Console.WriteLine($"Contact: {contact.Name}, {contact.Number}");
+                DisplayContactDetails(contact);
             }
         }
 	}
