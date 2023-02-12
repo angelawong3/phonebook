@@ -38,6 +38,15 @@ namespace Phonebook
                 DisplayContactDetails(contact);
             }
         }
+
+        public void DisplayMatchingContact(String searchPhrase)
+        {
+            var matchingContacts = _contacts.Where(c => c.Name.Contains(searchPhrase)).ToList();
+            foreach (var contact in matchingContacts)
+            {
+                DisplayContactDetails(contact);
+            }
+        }
 	}
 }
 
